@@ -10,6 +10,7 @@
   --light: #f4f4fd;
   --navigation-active: #404bbf;
   --white-text-color: #ffffff;
+  --tra: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -591,6 +592,7 @@ body {
 
 .portfolio-item {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  max-width: 360px;
 }
 
 .portfolio-link {
@@ -602,6 +604,40 @@ body {
 .portfolio-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+/* Overlay Portfolio */
+
+.portfolio-list-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--light);
+  background-color: var(--primary-brand);
+  background-blend-mode: soft-light;
+  mix-blend-mode: normal;
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  transform: translate(0, 100%);
+  transition: transform var(--tra);
+}
+
+.portfolio-link:hover .overlay,
+.portfolio-link:focus .overlay {
+  transform: translate(0, 0);
 }
 
 /*======================= /PORTFOLIO =========================   */
