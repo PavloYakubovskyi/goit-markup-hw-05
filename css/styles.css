@@ -10,7 +10,8 @@
   --light: #f4f4fd;
   --navigation-active: #404bbf;
   --white-text-color: #ffffff;
-  --tra: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --tra-tim-fun: cubic-bezier(0.4, 0, 0.2, 1);
+  --tra-dur: 250ms;
 }
 
 h1,
@@ -180,16 +181,25 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--dark);
+  transition-property: color;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .menu-link:hover,
 .menu-link:focus {
-  color: #404bbf;
+  color: var(--navigation-active);
+}
+
+.contact-link {
+  transition-property: color;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .contact-link:hover,
 .contact-link:focus {
-  color: #404bbf;
+  color: var(--navigation-active);
 }
 
 /* ======================== /HEADER ========================  */
@@ -253,11 +263,14 @@ body {
   align-items: center;
   border: none;
   margin: 0 auto;
+  transition-property: background-color, box-shadow;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .modal-btn:hover,
 .modal-btn:focus {
-  background-color: #404bbf;
+  background-color: var(--navigation-active);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
@@ -384,25 +397,31 @@ body {
 .employees-soc-link {
   width: 100%;
   height: 100%;
-  background-color: #4d5ae5;
+  background-color: var(--primary-brand);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-property: background-color;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .employees-soc-icon {
-  fill: #ffffff;
+  fill: var(--white-text-color);
+  transition-property: fill;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .employees-soc-link:hover,
 .employees-soc-link:focus {
-  background-color: #404bbf;
+  background-color: var(--navigation-active);
 }
 
 .employees-soc-link .employees-soc-icon:hover,
 .employees-soc-link .employees-soc-icon:focus {
-  fill: #f4f4fd;
+  fill: var(--light);
 }
 
 .employees-item {
@@ -436,20 +455,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8e8f99;
+  color: var(--subtle-text);
+  transition-property: color;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 .customer-icon {
   fill: currentColor;
+  transition-property: fill;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .customer-link:hover,
 .customer-link:focus {
-  color: #404bbf;
+  color: var(--navigation-active);
 }
 
 .customer-link .customer-icon:hover,
 .customer-link .customer-icon:focus {
-  fill: #404bbf;
+  fill: var(--navigation-active);
 }
 
 /* ======================== /CUSTOMERS ========================= */
@@ -506,6 +531,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-property: background-color;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .footer-soc-link:hover,
@@ -515,6 +543,9 @@ body {
 
 .footer-soc-icon {
   fill: #f4f4fd;
+  transition-property: fill;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .footer-soc-link .footer-soc-icon:hover,
@@ -527,7 +558,6 @@ body {
 /* ======================= PORTFOLIO ========================= */
 
 .portfolio-btn {
-  /* Чи треба вказувати ще раз font-family якщо ми маємо його в body? */
   font-family: var(--white-text-color);
   font-weight: 700;
   line-height: 1.5;
@@ -542,12 +572,15 @@ body {
   border-radius: 4px;
   cursor: pointer;
   padding: 12px 24px;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .portfolio-btn:hover,
 .portfolio-btn:focus {
   color: var(--white-text-color);
-  background: var(--primary-brand);
+  background-color: var(--primary-brand);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -632,7 +665,9 @@ body {
   width: 100%;
   overflow: auto;
   transform: translate(0, 100%);
-  transition: transform var(--tra);
+  transition-property: transform;
+  transition-duration: var(--tra-dur);
+  transition-timing-function: var(--tra-tim-fun);
 }
 
 .portfolio-link:hover .overlay,
