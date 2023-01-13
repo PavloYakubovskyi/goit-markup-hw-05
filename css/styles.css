@@ -191,6 +191,22 @@ body {
   color: var(--navigation-active);
 }
 
+.menu-item {
+  position: relative;
+}
+
+.menu-link::after {
+  display: block;
+  content: '';
+  background-color: #404bbf;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+}
+
 .contact-link {
   transition-property: color;
   transition-duration: var(--tra-dur);
